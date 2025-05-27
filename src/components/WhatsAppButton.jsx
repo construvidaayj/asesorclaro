@@ -19,11 +19,11 @@ const WhatsAppButton = () => {
       <Button
         asChild
         size="lg"
-        className="rounded-full p-4 bg-green-500 hover:bg-green-600 text-white shadow-lg"
+        className="rounded-full p-1 bg-green-500 hover:bg-green-600 text-white shadow-lg"
         style={{ width: '60px', height: '60px' }}
       >
         <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
-          <MessageSquare className="h-7 w-7" />
+          <img src="/whatsapp.png"  className="h-116 w-auto" alt="logo whatsapp" />
         </a>
       </Button>
     </motion.div>

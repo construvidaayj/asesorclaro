@@ -57,7 +57,7 @@ const ContactSection = () => {
           Ponte en <span className="text-gradient">Contacto</span>
         </h2>
         <p className="text-center text-gray-600 mb-12 text-lg">Estoy listo para ayudarte a encontrar tu plan Claro ideal. ¡Hablemos!</p>
-        
+
         <div className="grid md:grid-cols-2 gap-12 items-start">
           <div className="bg-white p-8 rounded-lg shadow-xl border border-gray-200">
             <h3 className="text-2xl font-semibold text-gray-800 mb-6">Envíame un Mensaje</h3>
@@ -112,25 +112,25 @@ const ContactSection = () => {
                 </a>
               </div>
             </div>
-            
+
             <div className="bg-white p-8 rounded-lg shadow-xl border border-gray-200">
               <h3 className="text-2xl font-semibold text-gray-800 mb-6">Sígueme en Redes</h3>
               <div className="flex space-x-4">
                 <a href="https://www.facebook.com/jose.catama.523166" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-claro-blue transition-colors">
-                  <Facebook className="h-8 w-8 " />
+                <img src="/facebook.png" className="h-10 w-auto shadow-lg transition ease-in-out duration-100 hover:scale-110 cursor-pointer" alt="logo facebook" />
                   <span className="sr-only">Facebook</span>
                 </a>
                 <a href="https://www.instagram.com/jose.catama/" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-claro-blue transition-colors">
-                  <Instagram className="h-8 w-8 " />
+                <img src="/instagram.png" className="h-10 w-auto shadow-lg transition ease-in-out duration-100 hover:scale-110 cursor-pointer" alt="logo facebook" />
                   <span className="sr-only">Instagram</span>
                 </a>
                 <a href="https://www.facebook.com/jose.catama.523166" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-claro-blue transition-colors">
-                  <FacebookIcon className="h-8 w-8 " />
+                  <img src="/whatsapp.png" className="h-10 w-auto transition ease-in-out duration-100 hover:scale-110 cursor-pointer" alt="logo facebook" />
                   <span className="sr-only">Facebook</span>
                 </a>
               </div>
             </div>
-             <p className="text-sm text-gray-500 mt-4">
+            <p className="text-sm text-gray-500 mt-4">
               Para una atención más rápida, puedes contactarme directamente por teléfono o WhatsApp.
             </p>
           </div>
@@ -141,4 +141,3 @@ const ContactSection = () => {
 };
 
 export default ContactSection;
-  
