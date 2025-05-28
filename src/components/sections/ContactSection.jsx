@@ -8,6 +8,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { useToast } from '@/components/ui/use-toast';
 import { Mail, Phone, Linkedin, Send, Facebook, Instagram, FacebookIcon } from 'lucide-react';
+import advisorConfig from '../../config/advisorConfig';
 
 const ContactSection = () => {
   const { toast } = useToast();
@@ -102,13 +103,13 @@ const ContactSection = () => {
             <div className="bg-white p-8 rounded-lg shadow-xl border border-gray-200">
               <h3 className="text-2xl font-semibold text-gray-800 mb-6">Información de Contacto Directo</h3>
               <div className="space-y-4">
-                <a href="tel:+573024902653" className="flex items-center text-gray-700 hover:text-claro-red transition-colors">
+                <a href={`https://wa.me/${advisorConfig.dataAdvisor.contactNumber}?text=${advisorConfig.dataAdvisor.whatsApp.message}`} className="flex items-center text-gray-700 hover:text-claro-red transition-colors">
                   <Phone className="h-6 w-6 mr-3 text-claro-red" />
-                  <span>+57 3024902653</span>
+                  <span>{advisorConfig.dataAdvisor.contactNumber}</span>
                 </a>
                 <a href="mailto:josecatama24@gmail.com" className="flex items-center text-gray-700 hover:text-claro-red transition-colors">
                   <Mail className="h-6 w-6 mr-3 text-claro-red" />
-                  <span>josecatama24@gmail.com</span>
+                  <span>{advisorConfig.dataAdvisor.emailContact}</span>
                 </a>
               </div>
             </div>
@@ -116,16 +117,16 @@ const ContactSection = () => {
             <div className="bg-white p-8 rounded-lg shadow-xl border border-gray-200">
               <h3 className="text-2xl font-semibold text-gray-800 mb-6">Sígueme en Redes</h3>
               <div className="flex space-x-4">
-                <a href="https://www.facebook.com/jose.catama.523166" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-claro-blue transition-colors">
-                <img src="/facebook.png" className="h-10 w-auto shadow-lg transition ease-in-out duration-100 hover:scale-110 cursor-pointer" alt="logo facebook" />
+                <a href={advisorConfig.dataAdvisor.socialNetwork.facebook.siteUrl} target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-claro-blue transition-colors">
+                  <img src={advisorConfig.dataAdvisor.socialNetwork.facebook.iconUrl} className="h-10 w-auto shadow-lg transition ease-in-out duration-100 hover:scale-110 cursor-pointer" alt="logo facebook" />
                   <span className="sr-only">Facebook</span>
                 </a>
-                <a href="https://www.instagram.com/jose.catama/" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-claro-blue transition-colors">
-                <img src="/instagram.png" className="h-10 w-auto shadow-lg transition ease-in-out duration-100 hover:scale-110 cursor-pointer" alt="logo facebook" />
+                <a href={advisorConfig.dataAdvisor.socialNetwork.instagram.siteUrl} target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-claro-blue transition-colors">
+                  <img src={advisorConfig.dataAdvisor.socialNetwork.instagram.iconUrl} className="h-10 w-auto shadow-lg transition ease-in-out duration-100 hover:scale-110 cursor-pointer" alt="logo facebook" />
                   <span className="sr-only">Instagram</span>
                 </a>
-                <a href="https://www.facebook.com/jose.catama.523166" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-claro-blue transition-colors">
-                  <img src="/whatsapp.png" className="h-10 w-auto transition ease-in-out duration-100 hover:scale-110 cursor-pointer" alt="logo facebook" />
+                <a href={advisorConfig.dataAdvisor.whatsApp.link} target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-claro-blue transition-colors">
+                  <img src={advisorConfig.dataAdvisor.whatsApp.iconUrl} className="h-10 w-auto transition ease-in-out duration-100 hover:scale-110 cursor-pointer" alt="logo whatsapp" />
                   <span className="sr-only">Facebook</span>
                 </a>
               </div>

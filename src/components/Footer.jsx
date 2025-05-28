@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { Linkedin, Mail, Phone } from 'lucide-react';
+import advisorConfig from '../config/advisorConfig';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -10,7 +11,7 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           <div>
-            <p className="text-xl font-semibold text-white mb-2">Jose Catama</p>
+            <p className="text-xl font-semibold text-white mb-2">{advisorConfig.dataAdvisor.name}</p>
             <p className="text-sm">Asesor Comercial Autorizado Claro</p>
             <p className="text-sm">Tu Conexión Perfecta</p>
           </div>
@@ -28,11 +29,11 @@ const Footer = () => {
             <ul className="space-y-2 text-sm">
               <li className="flex items-center">
                 <Phone className="h-4 w-4 mr-2 text-claro-red" />
-                <a href="tel:+1234567890" className="hover:text-claro-red transition-colors">+57 3024902653</a>
+                <a href={advisorConfig.dataAdvisor.whatsApp.link} className="hover:text-claro-red transition-colors">{advisorConfig.dataAdvisor.contactNumber}</a>
               </li>
               <li className="flex items-center">
                 <Mail className="h-4 w-4 mr-2 text-claro-red" />
-                <a href="mailto:juan.perez.claro@email.com" className="hover:text-claro-red transition-colors">josecatama24@gmail.com</a>
+                <a href={`mailto:${advisorConfig.dataAdvisor.emailContact}`} className="hover:text-claro-red transition-colors">{advisorConfig.dataAdvisor.emailContact}</a>
               </li>
             </ul>
             <div className="mt-4 flex space-x-3">
@@ -44,7 +45,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="border-t border-gray-700 pt-8 text-center text-sm">
-          <p>&copy; {currentYear} Jose Catama - Asesor Comercial Autorizado Claro. Todos los derechos reservados.</p>
+          <p>&copy; {currentYear} {advisorConfig.dataAdvisor.name} - Asesor Comercial Autorizado Claro. Todos los derechos reservados.</p>
           <p className="mt-1">
             <a href="#privacidad" className="hover:text-claro-red transition-colors">Política de Privacidad</a> | <a href="#terminos" className="hover:text-claro-red transition-colors">Términos de Servicio</a>
           </p>

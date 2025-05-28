@@ -3,24 +3,25 @@ import React from 'react';
 import AnimatedSection from '@/components/AnimatedSection';
 import { Card, CardContent } from '@/components/ui/card';
 import { Star } from 'lucide-react';
+import advisorConfig from '../../config/advisorConfig';
 
 const testimonials = [
   {
     name: 'Ana García',
     photo_description: 'mujer sonriendo',
-    quote: 'Jose me ayudó a encontrar el plan perfecto para mi familia. ¡El servicio al cliente fue excepcional y ahora ahorramos dinero cada mes! Totalmente recomendado.',
+    quote: `${advisorConfig.dataAdvisor.name} me ayudó a encontrar el plan perfecto para mi familia. ¡El servicio al cliente fue excepcional y ahora ahorramos dinero cada mes! Totalmente recomendado.`,
     rating: 5,
   },
   {
     name: 'Carlos Rodríguez',
     photo_description: 'hombre de negocios',
-    quote: 'Como profesional independiente, necesito una conexión a internet rápida y confiable. Jose entendió mis necesidades y me consiguió un paquete de fibra óptica increíble. ¡Muy satisfecho!',
+    quote: `Como profesional independiente, necesito una conexión a internet rápida y confiable. ${advisorConfig.dataAdvisor.name} entendió mis necesidades y me consiguió un paquete de fibra óptica increíble. ¡Muy satisfecho!`,
     rating: 5,
   },
   {
     name: 'Laura Méndez',
     photo_description: 'joven estudiante',
-    quote: 'Estaba confundida con tantos planes móviles, pero Jose me explicó todo con paciencia y me ayudó a elegir el mejor para mí. ¡Ahora tengo datos ilimitados para mis estudios!',
+    quote: `Estaba confundida con tantos planes móviles, pero ${advisorConfig.dataAdvisor.name} me explicó todo con paciencia y me ayudó a elegir el mejor para mí. ¡Ahora tengo datos ilimitados para mis estudios!`,
     rating: 5,
   },
 ];

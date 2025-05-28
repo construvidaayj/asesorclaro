@@ -1,13 +1,10 @@
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { MessageSquare } from 'lucide-react';
 import { motion } from 'framer-motion';
+import advisorConfig from '../config/advisorConfig';
 
 const WhatsAppButton = () => {
-  const phoneNumber = '+573024902653';
-  const message = encodeURIComponent('Hola, estoy interesado en los servicios de Claro.');
-  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
 
   return (
     <motion.div
@@ -22,8 +19,8 @@ const WhatsAppButton = () => {
         className="rounded-full p-1 bg-green-500 hover:bg-green-600 text-white shadow-lg"
         style={{ width: '60px', height: '60px' }}
       >
-        <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
-          <img src="/whatsapp.png"  className="h-116 w-auto" alt="logo whatsapp" />
+        <a href={ advisorConfig.dataAdvisor.whatsApp.link} target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
+          <img src={advisorConfig.dataAdvisor.whatsApp.iconUrl}  className="h-116 w-auto" alt="logo whatsapp" />
         </a>
       </Button>
     </motion.div>

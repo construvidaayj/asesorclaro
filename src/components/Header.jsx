@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from '@/components/ui/sheet';
 import { Menu, X, Home, User, Wifi, Smartphone, MessageSquare, Award, Phone } from 'lucide-react';
 import { motion } from 'framer-motion';
+import advisorConfig from '../config/advisorConfig';
 
 const navLinks = [
   { href: '#inicio', label: 'Inicio', icon: Home },
@@ -37,9 +38,8 @@ const Header = ({ scrollToContact }) => {
 
   return (
     <motion.header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-white/90 shadow-lg backdrop-blur-md' : 'bg-transparent'
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white/90 shadow-lg backdrop-blur-md' : 'bg-transparent'
+        }`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
@@ -47,8 +47,8 @@ const Header = ({ scrollToContact }) => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           <a href="#inicio" onClick={(e) => { e.preventDefault(); handleNavLinkClick('#inicio'); }} className="text-2xl font-bold">
-            <span className="text-claro-red">Jose</span><span className="text-claro-blue">Catama</span>
-            <span className="block text-xs text-gray-600">Asesor Claro</span>
+            <span className="text-claro-red">{advisorConfig.dataAdvisor.name.split(" ").at(0)}</span><span className="text-claro-blue"> {advisorConfig.dataAdvisor.name.split(" ").at(1)}</span>
+            <span className="block text-xs text-gray-600">{advisorConfig.dataAdvisor.position}</span>
           </a>
 
           <nav className="hidden md:flex space-x-1">
@@ -63,7 +63,7 @@ const Header = ({ scrollToContact }) => {
               </Button>
             ))}
           </nav>
-          
+
           <Button className="hidden md:inline-flex bg-claro-red hover:bg-claro-red-dark text-white" onClick={scrollToContact}>
             Contactar
           </Button>
@@ -78,13 +78,13 @@ const Header = ({ scrollToContact }) => {
               <SheetContent side="left" className="w-[300px] sm:w-[340px] bg-white p-0">
                 <div className="p-6 border-b">
                   <a href="#inicio" onClick={(e) => { e.preventDefault(); handleNavLinkClick('#inicio'); }} className="text-2xl font-bold">
-                    <span className="text-claro-red">Juan</span><span className="text-claro-blue">Pérez</span>
+                    <span className="text-claro-red">{advisorConfig.dataAdvisor.name.split(" ").at(0)}</span><span className="text-claro-blue"> {advisorConfig.dataAdvisor.name.split(" ").at(1)}</span>
                   </a>
                 </div>
                 <nav className="flex flex-col space-y-2 p-6">
                   {navLinks.map((link) => (
                     <SheetClose asChild key={link.href}>
-                       <Button
+                      <Button
                         variant="ghost"
                         className="justify-start text-lg py-3 text-gray-700 hover:bg-claro-red/10 hover:text-claro-red"
                         onClick={() => handleNavLinkClick(link.href)}
@@ -96,11 +96,11 @@ const Header = ({ scrollToContact }) => {
                   ))}
                 </nav>
                 <div className="p-6 border-t">
-                   <SheetClose asChild>
+                  <SheetClose asChild>
                     <Button className="w-full bg-claro-red hover:bg-claro-red-dark text-white" onClick={scrollToContact}>
                       Contactar Ahora
                     </Button>
-                   </SheetClose>
+                  </SheetClose>
                 </div>
               </SheetContent>
             </Sheet>
@@ -112,4 +112,3 @@ const Header = ({ scrollToContact }) => {
 };
 
 export default Header;
-  

@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import AnimatedSection from '@/components/AnimatedSection';
 import { ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
+import advisorConfig from '../../config/advisorConfig';
 
 const HeroSection = ({ scrollToContact }) => {
   return (
@@ -17,7 +18,7 @@ const HeroSection = ({ scrollToContact }) => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <span className="block">Jose Catama</span>
+              <span className="block">{advisorConfig.dataAdvisor.name}</span>
               <span className="text-gradient block">Asesor Comercial Autorizado Claro</span>
               <span className="block text-3xl sm:text-4xl text-gray-700">Tu Conexión Perfecta</span>
             </motion.h1>
@@ -52,7 +53,7 @@ const HeroSection = ({ scrollToContact }) => {
             <img  
               className="rounded-full shadow-2xl w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 object-cover border-4 border-claro-red"
               alt="Foto profesional del asesor Juan Pérez"
-              src="/catama.png" />
+              src={advisorConfig.dataAdvisor.profilePhotoUrl} />
           </motion.div>
         </div>
       </div>

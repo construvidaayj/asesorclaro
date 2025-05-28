@@ -1,23 +1,23 @@
-
 import React from 'react';
 import AnimatedSection from '@/components/AnimatedSection';
 import { Award, Briefcase, CheckCircle } from 'lucide-react';
+import advisorConfig from '../../config/advisorConfig';
 
 const AboutSection = () => {
   return (
     <AnimatedSection id="acerca-de-mi" className="py-16 sm:py-24 bg-white" animation="slideInLeft">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl sm:text-4xl font-bold text-center mb-4">
-          Acerca de Mí: <span className="text-gradient">Jose Catama</span>
+          Acerca de Mí: <span className="text-gradient">{advisorConfig.dataAdvisor.name}</span>
         </h2>
         <p className="text-center text-gray-600 mb-12 text-lg">Tu experto en soluciones Claro.</p>
-        
+
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
-            <img   
-              className="rounded-lg shadow-xl w-full h-auto object-cover max-h-[400px]" 
-              alt="Jose Catama en una reunión con un cliente"
-              src="/catama.png" />
+            <img
+              className="rounded-lg shadow-xl w-full h-auto object-cover max-h-[400px]"
+              alt={`${advisorConfig.dataAdvisor.name} en una reunión con un cliente`}
+              src={advisorConfig.dataAdvisor.profilePhotoUrl} />
           </div>
           <div className="space-y-6">
             <div className="flex items-start space-x-4">
@@ -55,4 +55,3 @@ const AboutSection = () => {
 };
 
 export default AboutSection;
-  
