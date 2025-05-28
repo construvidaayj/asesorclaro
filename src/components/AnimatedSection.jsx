@@ -3,9 +3,10 @@ import React from 'react';
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 
-const AnimatedSection = ({ children, className, animation = "fadeInUp" }) => {
+const AnimatedSection = ({ children, className, animation = "fadeInUp", id }) => { // <--- Asegúrate de pasar el 'id'
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.2 });
+  // Cambia 'amount: 0.2' a un valor más alto, por ejemplo, 0.5 o 0.8
+  const isInView = useInView(ref, { once: true, amount: 0.5 }); // <-- CAMBIO SUGERIDO AQUÍ
 
   const variants = {
     fadeInUp: {
@@ -33,6 +34,7 @@ const AnimatedSection = ({ children, className, animation = "fadeInUp" }) => {
   return (
     <motion.section
       ref={ref}
+      id={id} // <--- Asegúrate de que el ID se propague aquí si AnimatedSection es el contenedor principal
       className={className}
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}

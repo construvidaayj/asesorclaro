@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from '@/components/ui/sheet';
@@ -28,22 +29,10 @@ const Header = ({ scrollToContact }) => {
   }, []);
 
   const handleNavLinkClick = (href) => {
-    setIsMobileMenuOpen(false); // Cierra el menú móvil
-
-    const targetElement = document.querySelector(href);
-    if (targetElement) {
-      // Obtener la posición del elemento.
-      const elementRect = targetElement.getBoundingClientRect();
-      const headerHeight = 80; // <--- ¡Importante! Ajusta esto si la altura de tu Header es diferente
-
-      // Calcular la posición de scroll deseada
-      const targetScrollPosition = window.scrollY + elementRect.top - headerHeight;
-
-      // Realizar el scroll suavemente
-      window.scrollTo({
-        top: targetScrollPosition,
-        behavior: 'smooth'
-      });
+    setIsMobileMenuOpen(false);
+    const element = document.querySelector(href);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
@@ -75,7 +64,7 @@ const Header = ({ scrollToContact }) => {
             ))}
           </nav>
 
-          <Button className="hidden md:inline-flex bg-claro-red hover:bg-claro-red-dark text-white" onClick={() => handleNavLinkClick('#contacto')}>
+          <Button className="hidden md:inline-flex bg-claro-red hover:bg-claro-red-dark text-white" onClick={scrollToContact}>
             Contactar
           </Button>
 
@@ -108,7 +97,7 @@ const Header = ({ scrollToContact }) => {
                 </nav>
                 <div className="p-6 border-t">
                   <SheetClose asChild>
-                    <Button className="w-full bg-claro-red hover:bg-claro-red-dark text-white" onClick={() => handleNavLinkClick('#contacto')}>
+                    <Button className="w-full bg-claro-red hover:bg-claro-red-dark text-white" onClick={scrollToContact}>
                       Contactar Ahora
                     </Button>
                   </SheetClose>
